@@ -1,32 +1,32 @@
-import { Users, Linkedin, Github, Mail, Briefcase, MapPin, Clock } from "lucide-react"
+import { Users, Linkedin, Github, Mail, Briefcase, MapPin, Clock, User } from "lucide-react"
 
 const teamMembers = [
   {
-    name: "Jean Claude Niyomugabo",
+    name: "Frank Harerimana",
     role: "CEO & Founder",
-    image: "/professional-african-male-ceo.jpg",
+    initials: "FH",
     bio: "Visionary leader with 10+ years in software development",
     social: {
       linkedin: "#",
       github: "#",
-      email: "jean@nurulabs.rw",
+      email: "frank.harerimana@nurulabs.rw",
     },
   },
   {
-    name: "Grace Uwase",
+    name: "Olivier Esuka",
     role: "CTO",
-    image: "/professional-african-female-cto.jpg",
+    initials: "OE",
     bio: "Tech expert specializing in cloud architecture and PaaS solutions",
     social: {
       linkedin: "#",
       github: "#",
-      email: "grace@nurulabs.rw",
+      email: "olivier.esuka@nurulabs.rw",
     },
   },
   {
     name: "Patrick Mugisha",
     role: "Lead Developer",
-    image: "/professional-african-male-developer.jpg",
+    initials: "PM",
     bio: "Full-stack developer passionate about building scalable solutions",
     social: {
       linkedin: "#",
@@ -37,7 +37,7 @@ const teamMembers = [
   {
     name: "Aline Umutoni",
     role: "Product Manager",
-    image: "/professional-african-female-product-manager.jpg",
+    initials: "AU",
     bio: "Product strategist focused on user-centric design and innovation",
     social: {
       linkedin: "#",
@@ -86,12 +86,10 @@ export function Team() {
           {teamMembers.map((member, index) => (
             <div key={index} className="group">
               <div className="bg-gray-50 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg">
-                <div className="aspect-square overflow-hidden bg-gray-200">
-                  <img
-                    src={member.image || "/placeholder.svg"}
-                    alt={member.name}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+                <div className="aspect-square flex items-center justify-center bg-primary/10">
+                  <div className="w-32 h-32 rounded-full bg-primary flex items-center justify-center">
+                    <User className="w-16 h-16 text-white" strokeWidth={1.5} />
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
