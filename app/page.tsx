@@ -61,11 +61,57 @@ export default function Home() {
     },
   }
 
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Nuru Labs Ltd - Software Solutions in Rwanda",
+    url: "https://nurulabs.rw",
+    description:
+      "Leading IT company in Rwanda building innovative software solutions including Jambo, the premier gym management platform.",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Nuru Labs Ltd",
+    },
+    hasPart: [
+      {
+        "@type": "WebPageElement",
+        "@id": "https://nurulabs.rw#services",
+        name: "Services",
+        description: "Software development services offered by Nuru Labs",
+      },
+      {
+        "@type": "WebPageElement",
+        "@id": "https://nurulabs.rw#jambo",
+        name: "Jambo",
+        description: "Comprehensive gym management platform for fitness centers",
+      },
+      {
+        "@type": "WebPageElement",
+        "@id": "https://nurulabs.rw#team",
+        name: "Team",
+        description: "Meet the Nuru Labs team",
+      },
+      {
+        "@type": "WebPageElement",
+        "@id": "https://nurulabs.rw#about",
+        name: "About",
+        description: "About Nuru Labs and our mission",
+      },
+      {
+        "@type": "WebPageElement",
+        "@id": "https://nurulabs.rw#contact",
+        name: "Contact",
+        description: "Get in touch with Nuru Labs",
+      },
+    ],
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
 
       <main className="min-h-screen">
         <Header />
